@@ -1,6 +1,5 @@
-import { getLoggedInUser } from "@/lib/actions/user.actions";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+
 import React from "react";
 
 export default async function RootLayout({
@@ -8,8 +7,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getLoggedInUser();
-  if (user) redirect("/");
   return (
     <main className="flex min-h-screen w-full justify-between font-inter">
       {children}
